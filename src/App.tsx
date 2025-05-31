@@ -1,7 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import HomePage from "./app/dashboard/page";
+import HomePage from "./pages/page";
 import Layout from "./Layout";
+import ProjectList from "./pages/projects";
+import ProjectForm from "./pages/form";
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
-              <Route path="/about" element={<HomePage />} />
+              <Route path="/projects" element={<ProjectList />} />
+              <Route path="/form" element={<ProjectForm />} />
             </Route>
           </Routes>
         </BrowserRouter>

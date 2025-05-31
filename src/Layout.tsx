@@ -7,8 +7,8 @@ export default function Layout() {
       <div>
         <Header />
       </div>
-      <div className="body h-full bg-neutral-100">
-        <div>
+      <div className="body h-full bg-neutral-100 justify-items-center ">
+        <div className="m-5 bg-white w-3xl p-5 rounded-xl">
           <Outlet />
         </div>
       </div>
