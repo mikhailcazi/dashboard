@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import Page from "./app/dashboard/page";
-import Header from "./components/header";
+import HomePage from "./app/dashboard/page";
+import Layout from "./Layout";
 
 function App() {
   return (
@@ -9,7 +9,10 @@ function App() {
       <div className="flex h-screen flex-col">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Page />} />
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              {/* <Route path="settings" element={<Settings />} /> */}
+            </Route>
           </Routes>
         </BrowserRouter>
       </div>
