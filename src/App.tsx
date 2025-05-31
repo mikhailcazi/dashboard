@@ -1,11 +1,11 @@
 import "./App.css";
-import { Button } from "@/components/ui/button";
+import Header from "./components/header";
 
 function App() {
   return (
     <>
-      <div className="flex items-center justify-center text-center h-screen">
-        <Button>Click me</Button>
+      <div className="flex h-screen flex-col">
+        <Header />
       </div>
     </>
   );
