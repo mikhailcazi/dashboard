@@ -1,14 +1,13 @@
 import { Outlet } from "react-router";
+import Header from "./components/header";
 
 export default function Layout() {
   return (
     <>
       <div>
-        <nav className="bg-gray-800">
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8"></div>
-        </nav>
+        <Header />
       </div>
-      <div className="body">
+      <div className="body h-full bg-neutral-100">
         <div>
           <Outlet />
         </div>
