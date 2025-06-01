@@ -24,8 +24,8 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
-  projectName: z.string().min(1),
-  proposerName: z.string().min(1),
+  projectName: z.string().min(1, "Required!"),
+  proposerName: z.string().min(1, "Required!"),
   projectCategory: z.string(),
   description: z.string(),
   email: z.string().email(),
@@ -110,13 +110,13 @@ export default function ProjectForm() {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="" />
+                    <SelectValue placeholder="Choose a category..." />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  <SelectItem value="Agriculture">Agriculture</SelectItem>
+                  <SelectItem value="Transport">Transport</SelectItem>
+                  <SelectItem value="Entertainment">Entertainment</SelectItem>
                 </SelectContent>
               </Select>
               <FormDescription>
