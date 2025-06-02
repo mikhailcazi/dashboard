@@ -1,11 +1,23 @@
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
-import { Button } from "@/components/ui/button";
+import HomePage from "./pages/page";
+import Layout from "./Layout";
+import ProjectList from "./pages/projects";
+import ProjectForm from "./pages/form";
 
 function App() {
   return (
     <>
-      <div className="flex items-center justify-center text-center h-screen">
-        <Button>Click me</Button>
+      <div className="flex h-screen flex-col">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/projects" element={<ProjectList />} />
+              <Route path="/form" element={<ProjectForm />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );
