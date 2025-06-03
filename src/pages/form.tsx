@@ -58,116 +58,122 @@ export default function ProjectForm() {
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 max-w-3xl mx-auto py-10"
-      >
-        <div className="grid grid-cols-12 gap-4">
-          <div className="col-span-4">
-            <FormField
-              control={form.control}
-              name="projectName"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Project Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Manhattan Project"
-                      type="text"
-                      {...field}
-                    />
-                  </FormControl>
+    <>
+      <h1 className="text-xl">Please enter the details of your project...</h1>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 max-w-3xl mx-auto py-10"
+        >
+          <div className="grid grid-cols-12 gap-4">
+            <div className="col-span-4">
+              <FormField
+                control={form.control}
+                name="projectName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Project Name</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Manhattan Project"
+                        type="text"
+                        {...field}
+                      />
+                    </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
-        </div>
 
-        <FormField
-          control={form.control}
-          name="proposerName"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Proposer Name</FormLabel>
-              <FormControl>
-                <Input placeholder="John Doe" type="text" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="projectCategory"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Project Category</FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
+          <FormField
+            control={form.control}
+            name="proposerName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Proposer Name</FormLabel>
                 <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Choose a category..." />
-                  </SelectTrigger>
+                  <Input placeholder="John Doe" type="text" {...field} />
                 </FormControl>
-                <SelectContent>
-                  <SelectItem value="Agriculture">Agriculture</SelectItem>
-                  <SelectItem value="Transport">Transport</SelectItem>
-                  <SelectItem value="Entertainment">Entertainment</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormDescription>
-                Choose the development category your project falls under
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
 
-        <FormField
-          control={form.control}
-          name="description"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Description</FormLabel>
-              <FormControl>
-                <Textarea
-                  placeholder="Start typing here..."
-                  className="resize-none"
-                  {...field}
-                />
-              </FormControl>
-              <FormDescription>
-                Mention the key points and benefits of the project
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email</FormLabel>
-              <FormControl>
-                <Input
-                  placeholder="john.doe@gmail.com"
-                  type="email"
-                  {...field}
-                />
-              </FormControl>
+          <FormField
+            control={form.control}
+            name="projectCategory"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Project Category</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Choose a category..." />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="Agriculture">Agriculture</SelectItem>
+                    <SelectItem value="Transport">Transport</SelectItem>
+                    <SelectItem value="Entertainment">Entertainment</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  Choose the development category your project falls under
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Description</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Start typing here..."
+                    className="resize-none"
+                    {...field}
+                  />
+                </FormControl>
+                <FormDescription>
+                  Mention the key points and benefits of the project
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="john.doe@gmail.com"
+                    type="email"
+                    {...field}
+                  />
+                </FormControl>
+
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
+    </>
   );
 }
